@@ -5,6 +5,8 @@
   --text-color: #111116;
   --light-text-color: #cdccd1;
   --primary-text-color: #fff;
+  --gradient-start: #6a11cb;
+  --gradient-end: #2575fc;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -20,7 +22,6 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--bg-color);
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +34,7 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--text-color);
-  background-color: var(--bg-color);
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
 }
 body.dark {
   --bg-color: #111116;
@@ -47,6 +48,10 @@ body.dark {
   padding: 0 20px;
   display: flex;
   gap: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 .container .card {
   flex: 1;
@@ -122,7 +127,6 @@ body.dark {
 .dropdown-container.active .dropdown-menu {
   display: flex;
 }
-
 .dropdown-container .dropdown-menu li {
   padding: 10px 20px;
   border-radius: 20px;
@@ -219,7 +223,6 @@ body.dark {
 .card-bottom ion-icon {
   font-size: 20px;
 }
-
 .card-bottom button {
   height: 50px;
   display: flex;
@@ -237,7 +240,6 @@ body.dark {
   color: var(--primary-text-color);
   background-color: var(--primary-color);
 }
-
 .mode {
   position: fixed;
   bottom: 20px;
@@ -282,7 +284,7 @@ body.dark {
   height: 20px;
 }
 
-/* media quiries */
+/* media queries */
 @media (max-width: 800px) {
   .container {
     width: 100%;
@@ -302,7 +304,6 @@ body.dark {
   .container .card .to {
     flex-direction: column;
   }
-
   .swap-position {
     top: 50%;
     left: 50%;
@@ -315,4 +316,3 @@ body.dark {
     transform: rotate(90deg);
   }
 }
-
